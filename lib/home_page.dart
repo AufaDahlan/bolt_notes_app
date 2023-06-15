@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tugas_flutter/api.dart';
 
 class home_page extends StatelessWidget {
   const home_page({super.key});
@@ -43,33 +44,41 @@ class home_page extends StatelessWidget {
                       Column(
                         mainAxisAlignment: MainAxisAlignment.end,
                         children: [
-                          Container(
-                            height: 35,
-                            width: 35,
-                            decoration: BoxDecoration(
-                              color: Colors.amber,
-                              border: Border.all(
-                                color: Colors.black,
-                                width: 1,
-                              ),
-                              boxShadow: [
-                                BoxShadow(
-                                    color: Colors.black,
-                                    spreadRadius: 1,
-                                    blurRadius: 1,
-                                    offset: Offset.fromDirection(1, 2)),
-                              ],
-                            ),
-                            child: Icon(
-                              Icons.add,
-                              size: 25,
-                              shadows: [
-                                Shadow(
+                          GestureDetector(
+                            onTap: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => buildernya()));
+                            },
+                            child: Container(
+                              height: 35,
+                              width: 35,
+                              decoration: BoxDecoration(
+                                color: Colors.amber,
+                                border: Border.all(
                                   color: Colors.black,
-                                  blurRadius: 1,
-                                  offset: Offset.fromDirection(1, 1),
-                                )
-                              ],
+                                  width: 1,
+                                ),
+                                boxShadow: [
+                                  BoxShadow(
+                                      color: Colors.black,
+                                      spreadRadius: 1,
+                                      blurRadius: 1,
+                                      offset: Offset.fromDirection(1, 2)),
+                                ],
+                              ),
+                              child: Icon(
+                                Icons.add,
+                                size: 25,
+                                shadows: [
+                                  Shadow(
+                                    color: Colors.black,
+                                    blurRadius: 1,
+                                    offset: Offset.fromDirection(1, 1),
+                                  )
+                                ],
+                              ),
                             ),
                           ),
                         ],
